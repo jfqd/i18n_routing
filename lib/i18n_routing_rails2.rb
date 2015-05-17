@@ -73,7 +73,7 @@ module ActionController
 
                 #logger.debug "Call routes : #{selector} => \#{selector_g} (#{rlang}) "
                 #puts "Call routes : #{selector} => \#{selector_g} (#{rlang}) Found:\#{respond_to? selector_g and selector_g != :#{selector}}"
-                if respond_to? selector_g and selector_g != :#{selector}
+                if defined? selector_g and selector_g != :#{selector}
                   send(selector_g, *args)
                 else
                   gl#{selector}(*args)
